@@ -15,26 +15,26 @@ const runSequence = require('run-sequence');
 
 module.exports = {
     
-    config: function(opts) {
-        return new config(opts);
-    },
+    init: function(opts) {
 
-    run: function(config) {
-        browserify(config);
-        build(config);
-        bundle(config);
-        clean(config);
-        copy(config);
-        examples(config);
-        less(config);
-        minify(config);
-        prependHeaders(config);
+        const c = new config(opts);
+
+        browserify(c);
+        build(c);
+        bundle(c);
+        clean(c);
+        copy(c);
+        examples(c);
+        less(c);
+        minify(c);
+        prependHeaders(c);
         
         gulp.task('default', function(cb) {
             runSequence('clean:dist', 'clean:examples', 'build', 'browserify', 'less', 'minify', 'bundle', 'bundle:typings', 'prependHeaders', 'sync', cb);
         });
 
         gulp.task('sync', ['copy:bundle', 'copy:css', 'copy:img', 'copy:typings']);
+        
     }
     
 }
