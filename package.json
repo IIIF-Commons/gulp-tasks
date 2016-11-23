@@ -20,6 +20,7 @@
     
   },
   "dependencies": {
-    "gulp-utils": "viewdir/gulp-utils"
+    "gulp-utils": "viewdir/gulp-utils",
+    "run-sequence": "^1.2.1"
   }
 }
