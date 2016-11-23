@@ -11,6 +11,7 @@ const prependHeaders = require('./tasks/prependHeaders');
 const config = require('./config');
 const gulp = require('gulp');
 const utils = require('gulp-utils');
+const runSequence = require('run-sequence');
 
 gulp.task('default', function(cb) {
     runSequence('clean:dist', 'clean:examples', 'build', 'browserify', 'less', 'minify', 'bundle', 'bundle:typings', 'prependHeaders', 'sync', cb);
