@@ -1,4 +1,5 @@
-const { config } = require('../config');
+const c = require('../config');
+const config = new c();
 const gulp = require('gulp');
 const less = require('gulp-less');
 const path = require('path');

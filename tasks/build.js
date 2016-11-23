@@ -1,4 +1,5 @@
-const { config } = require('../config');
+const c = require('../config');
+const config = new c();
 const concat = require('gulp-concat');
 const gulp = require('gulp');
 const merge = require('merge2');
