@@ -1,51 +1,21 @@
 'use strict';
 
-const browserify = require('./browserify');
-const build = require('./build');
+const browserify = require('./tasks/browserify');
+const build = require('./tasks/build');
+const bump = require('./tasks/bump');
+const bundle = require('./tasks/bundle');
+const clean = require('./tasks/clean');
+const copy = require('./tasks/copy');
+const examples = require('./tasks/examples');
+const less = require('./tasks/less');
+const minify = require('./tasks/minify');
+const prependHeaders = require('./tasks/prependHeaders');
 const config = require('./config');
 const gulp = require('gulp');
 const utils = require('gulp-utils');
 
-var tasks = {
-    browserify: function(config) {
-        return through.obj(function(file, encoding, cb) {
-            var bundle = browserify(config)
-                .require(file, {entry: file.path})
-                .bundle();
+gulp.task('default', function(cb) {
+    runSequence('clean:dist', 'clean:examples', 'build', 'browserify', 'less', 'minify', 'bundle', 'bundle:typings', 'prependHeaders', 'sync', cb);
+});
 
-            file.contents = bundle;
-            this.push(file);
-            cb();
-        });
-    },
-    mount: function(connect, dir) {
-        return connect.static(path.resolve(dir));
-    },
-    minify: function(file, dest) {
-        return new Promise(function(resolve, reject) {
-            gulp.src(file)
-                .pipe(rename(function(path) {
-                    path.extname = ".min" + path.extname;
-                }))
-                .pipe(uglify({
-                    mangle: false
-                }))
-                .pipe(gulp.dest(dest))
-                .on('end', function() {
-                    resolve();
-                });
-        });
-    },
-    prependHeader: function(header, file, dest){
-        return new Promise(function(resolve, reject) {
-            return gulp.src(file)
-                    .pipe(insert.prepend(header))
-                    .pipe(gulp.dest(dest))
-                    .on('end', function() {
-                        resolve();
-                    });
-        });
-    }
-};
-
-module.exports = utils;
+gulp.task('sync', ['copy:bundle', 'copy:css', 'copy:img', 'copy:typings']);
