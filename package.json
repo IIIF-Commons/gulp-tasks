@@ -17,9 +17,9 @@
   },
   "homepage": "https://github.com/viewdir/gulp-tasks#readme",
   "devDependencies": {
-    "gulp-utils": "viewdir/gulp-utils"
+    
   },
   "dependencies": {
-    
+    "gulp-utils": "viewdir/gulp-utils"
   }
 }
