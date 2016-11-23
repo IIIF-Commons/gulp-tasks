@@ -1,3 +1,4 @@
+const concat = require('gulp-concat');
 const gulp = require('gulp');
 const merge = require('merge2');
 const path = require('path');
@@ -20,5 +21,5 @@ module.exports = function(config) {
             .pipe(concat(config.fileNames.dtsBundleOut))
             .pipe(gulp.dest(config.directories.dist));
     });
-    
+
 }

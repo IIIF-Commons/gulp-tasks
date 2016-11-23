@@ -20,7 +20,16 @@
     
   },
   "dependencies": {
+    "del": "^2.2.0",
+    "gulp-bump": "^2.1.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-connect": "^4.0.0",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
     "gulp-utils": "viewdir/gulp-utils",
-    "run-sequence": "^1.2.1"
+    "path": "^0.12.7",
+    "merge2": "^1.0.2",
+    "run-sequence": "^1.2.1",
+    "yargs": "^4.7.1"
   }
 }
