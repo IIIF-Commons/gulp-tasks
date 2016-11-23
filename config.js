@@ -1,8 +1,8 @@
-const metadata = require('./package');
-
 module.exports = function () {
-    this.name = metadata.name;
-    this.header = '// ' + this.name + ' v' + metadata.version + ' ' + metadata.homepage + '\n';
+    this.name = '';
+    this.header = function() {
+        return '// ' + this.name + ' v' + metadata.version + ' ' + metadata.homepage + '\n';
+    };
     this.dependencies = {
         // libs that MUST be included in a consuming app for this component to work
         libs: [],

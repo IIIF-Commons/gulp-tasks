@@ -1,5 +1,3 @@
-const c = require('../config');
-const config = new c();
 const gulp = require('gulp');
 const connect = require('gulp-connect');
 
