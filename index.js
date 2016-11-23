@@ -1,5 +1,3 @@
-'use strict';
-
 const browserify = require('./tasks/browserify');
 const build = require('./tasks/build');
 const bump = require('./tasks/bump');
@@ -19,3 +17,5 @@ gulp.task('default', function(cb) {
 });
 
 gulp.task('sync', ['copy:bundle', 'copy:css', 'copy:img', 'copy:typings']);
+
+module.exports = config;
