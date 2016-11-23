@@ -19,12 +19,12 @@ module.exports = function (opts) {
             ].concat(opts.typings)
     };
     this.fileNames = {
-        cssOut: this.name + '.css',
-        jsOut: this.name + '.js',
-        jsMinOut: this.name + '.min.js',
-        jsBundleOut: this.name + '.bundle.js',
-        dtsOut: this.name + '.d.ts',
-        dtsBundleOut: this.name + '.bundle.d.ts'
+        cssOut: this.metadata.name + '.css',
+        jsOut: this.metadata.name + '.js',
+        jsMinOut: this.metadata.name + '.min.js',
+        jsBundleOut: this.metadata.name + '.bundle.js',
+        dtsOut: this.metadata.name + '.d.ts',
+        dtsBundleOut: this.metadata.name + '.bundle.d.ts'
     };
     this.directories = {
         dist: './dist',
@@ -53,7 +53,7 @@ module.exports = function (opts) {
         src: this.directories.dist,
         target: this.directories.dist,
         config: {
-            standalone: this.name,
+            standalone: this.metadata.name,
             debug: false
         }
     };
