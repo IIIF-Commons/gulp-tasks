@@ -23,7 +23,8 @@ module.exports = function (opts) {
         examplesCss: './examples/css',
         examplesImg: './examples/img',
         examplesJs: './examples/js',
-        typings: './typings'
+        typings: './typings',
+        tests: './tests'
     };
     this.typescript = {
         src: [
