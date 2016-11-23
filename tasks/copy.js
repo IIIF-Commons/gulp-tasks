@@ -1,5 +1,4 @@
 const gulp = require('gulp');
-const utils = require('gulp-utils');
 const path = require('path');
 
 module.exports = function(config) {

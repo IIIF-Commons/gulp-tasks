@@ -10,7 +10,6 @@ const minify = require('./tasks/minify');
 const prependHeaders = require('./tasks/prependHeaders');
 const config = require('./config');
 const gulp = require('gulp');
-const utils = require('gulp-utils');
 const runSequence = require('run-sequence');
 
 module.exports = {
