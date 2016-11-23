@@ -1,22 +1,13 @@
 module.exports = function (opts) {
     this.metadata = opts.metadata;
-    this.header = function() {
-        return '// ' + this.metadata.name + ' v' + this.metadata.version + ' ' + this.metadata.homepage + '\n';
-    };
+    this.header = '// ' + this.metadata.name + ' v' + this.metadata.version + ' ' + this.metadata.homepage + '\n';
     this.dependencies = {
         // libs that MUST be included in a consuming app for this component to work
-        libs: [
-                'node_modules/base-component/dist/base-component.bundle.js'
-            ].concat(opts.libs),
+        libs: opts.libs,
         // libs that MAY be included in a consuming app but are used here for examples purposes
         examples: opts.examples,
         // ts definitions to copy to the typings dir
-        typings: [
-                'node_modules/base-component/dist/base-component.d.ts',
-                'node_modules/base-component/typings/corejs.d.ts',
-                'node_modules/base-component/typings/jquery.d.ts',
-                'node_modules/base-component/typings/node.d.ts'
-            ].concat(opts.typings)
+        typings: opts.typings
     };
     this.fileNames = {
         cssOut: this.metadata.name + '.css',
