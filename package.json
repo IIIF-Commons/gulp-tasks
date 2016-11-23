@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/viewdir/gulp-tasks#readme",
   "devDependencies": {
-    
+
   },
   "dependencies": {
     "del": "^2.2.0",
@@ -28,6 +28,8 @@
     "gulp-rename": "^1.2.2",
     "gulp-typescript": "^2.13.4",
     "gulp-utils": "viewdir/gulp-utils",
+    "chai": "^3.5.0",
+    "gulp-mocha": "^3.0.1",
     "path": "^0.12.7",
     "merge2": "^1.0.2",
     "run-sequence": "^1.2.1",

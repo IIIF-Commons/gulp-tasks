@@ -13,7 +13,7 @@ const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
 module.exports = {
-    
+
     init: function(opts) {
 
         const c = new config(opts);
@@ -26,14 +26,17 @@ module.exports = {
         examples(c);
         less(c);
         minify(c);
+        mocha(c);
         prependHeaders(c);
-        
+
         gulp.task('default', function(cb) {
             runSequence('clean:dist', 'clean:examples', 'build', 'browserify', 'less', 'minify', 'bundle', 'bundle:typings', 'prependHeaders', 'sync', cb);
         });
 
         gulp.task('sync', ['copy:bundle', 'copy:css', 'copy:img', 'copy:typings']);
-        
+
+        gulp.task('test', ['mocha']);
+
     }
-    
+
 }
