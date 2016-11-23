@@ -15,8 +15,8 @@ const runSequence = require('run-sequence');
 
 module.exports = {
     
-    config: function() {
-        return new config();
+    config: function(opts) {
+        return new config(opts);
     },
 
     run: function(config) {
