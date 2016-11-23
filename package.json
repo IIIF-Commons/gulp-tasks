@@ -20,6 +20,7 @@
     
   },
   "dependencies": {
+    "base-component": "viewdir/base-component#v1.0.6",
     "del": "^2.2.0",
     "gulp-bump": "^2.1.0",
     "gulp-concat": "^2.6.0",
