@@ -6,7 +6,7 @@ module.exports = function(config) {
 
     gulp.task('mocha', function () {
       return gulp.src(path.join(config.directories.tests, '*.js'))
-        .pipe(mocha({ reporter: 'list' }));
+        .pipe(mocha({ require: 'ts-node/register', reporter: 'list' }));
     });
 
 }
