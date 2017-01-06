@@ -34,10 +34,9 @@ module.exports = function (opts) {
         ],
         config: {
             declarationFiles: true,
-            noExternalResolve: true,
+            noResolve: true,
             noLib: false,
-            module: 'commonjs',
-            sortOutput: true
+            module: 'commonjs'
         }
     };
     this.browserify = {
