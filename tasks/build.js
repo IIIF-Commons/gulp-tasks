@@ -2,12 +2,13 @@ const concat = require('gulp-concat');
 const gulp = require('gulp');
 const merge = require('merge2');
 const ts = require('gulp-typescript');
+var tsProject = ts.createProject('tsconfig.json');
 
 module.exports = function(config) {
 
     gulp.task('build', function() {
-        const result = gulp.src(config.typescript.src)
-            .pipe(ts(config.typescript.config));
+        const result = tsProject.src()
+            .pipe(tsProject());
 
         return merge([
             result.dts

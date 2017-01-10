@@ -25,7 +25,7 @@ module.exports = function(config) {
             .pipe(gulp.dest(config.directories.dist)),
 
             // merge typings dependencies array and dist/name.d.ts to dist/name.bundle.d.ts
-            gulp.src(config.dependencies.typings.concat([
+            gulp.src((config.dependencies.typings || []).concat([
                 path.join(config.directories.dist, config.fileNames.dtsOut)
             ]))
             .pipe(concat(config.fileNames.dtsBundleOut))

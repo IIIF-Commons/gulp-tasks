@@ -14,7 +14,7 @@ module.exports = function(config) {
     });
 
     gulp.task('copy:typings', function() {
-        return gulp.src(config.dependencies.typings).pipe(gulp.dest(config.directories.typings));
+        return gulp.src((config.dependencies.typings || [])).pipe(gulp.dest(config.directories.typings));
     });
 
     gulp.task('copy:css', function() {
