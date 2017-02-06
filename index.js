@@ -29,7 +29,7 @@ module.exports = {
         prependHeaders(c);
         
         gulp.task('default', function(cb) {
-            runSequence('clean:dist', 'clean:examples', 'build', 'browserify', 'less', 'minify', 'bundle', 'bundle:typings', 'prependHeaders', 'sync', cb);
+            runSequence('clean:dist', 'clean:examples', 'build', 'browserify', 'less', 'minify', 'bundle', 'prependHeaders', 'sync', cb);
         });
 
         gulp.task('sync', ['copy:bundle', 'copy:css', 'copy:img', 'copy:typings']);

@@ -14,8 +14,7 @@ module.exports = function (opts) {
         jsOut: this.metadata.name + '.js',
         jsMinOut: this.metadata.name + '.min.js',
         jsBundleOut: this.metadata.name + '.bundle.js',
-        dtsOut: this.metadata.name + '.d.ts',
-        dtsBundleOut: this.metadata.name + '.bundle.d.ts'
+        dtsOut: this.metadata.name + '.d.ts'
     };
     this.directories = {
         dist: './dist',
