@@ -13,10 +13,6 @@ module.exports = function(config) {
         return gulp.src([path.join(config.directories.dist, config.fileNames.jsOut)].concat(config.dependencies.libs).concat(config.dependencies.examples)).pipe(gulp.dest(config.directories.examplesJs));
     });
 
-    gulp.task('copy:typings', function() {
-        return gulp.src((config.dependencies.typings || [])).pipe(gulp.dest(config.directories.typings));
-    });
-
     gulp.task('copy:css', function() {
         return gulp.src([path.join(config.directories.dist, config.fileNames.cssOut)]).pipe(gulp.dest(config.directories.examplesCss));
     });

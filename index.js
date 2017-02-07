@@ -32,7 +32,7 @@ module.exports = {
             runSequence('clean:dist', 'clean:examples', 'build', 'browserify', 'less', 'minify', 'bundle', 'prependHeaders', 'sync', cb);
         });
 
-        gulp.task('sync', ['copy:bundle', 'copy:css', 'copy:img', 'copy:typings']);
+        gulp.task('sync', ['copy:bundle', 'copy:css', 'copy:img']);
         
     }
     
