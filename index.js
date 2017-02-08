@@ -7,13 +7,14 @@ const copy = require('./tasks/copy');
 const examples = require('./tasks/examples');
 const less = require('./tasks/less');
 const minify = require('./tasks/minify');
+const mocha = require('./tasks/mocha');
 const prependHeaders = require('./tasks/prependHeaders');
 const config = require('./config');
 const gulp = require('gulp');
 const runSequence = require('run-sequence');
 
 module.exports = {
-    
+
     init: function(opts) {
 
         const c = new config(opts);
@@ -26,14 +27,16 @@ module.exports = {
         examples(c);
         less(c);
         minify(c);
+        mocha(c);
         prependHeaders(c);
-        
+
         gulp.task('default', function(cb) {
             runSequence('clean:dist', 'clean:examples', 'build', 'browserify', 'less', 'minify', 'bundle', 'prependHeaders', 'sync', cb);
         });
 
         gulp.task('sync', ['copy:bundle', 'copy:css', 'copy:img']);
         
+        gulp.task('test', ['mocha']);
     }
-    
+
 }
