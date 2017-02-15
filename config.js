@@ -23,20 +23,6 @@ module.exports = function (opts) {
         typings: './typings',
         tests: './tests'
     };
-    this.typescript = {
-        src: [
-            'src/_references.ts',
-            'src/*.ts',
-            'typings/*.ts',
-            'typings/**/*.ts'
-        ],
-        config: {
-            declarationFiles: true,
-            noResolve: true,
-            noLib: false,
-            module: 'commonjs'
-        }
-    };
     this.browserify = {
         src: this.directories.dist,
         target: this.directories.dist,
