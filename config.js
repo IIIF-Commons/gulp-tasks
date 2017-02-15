@@ -5,9 +5,7 @@ module.exports = function (opts) {
         // libs that MUST be included in a consuming app for this component to work
         libs: opts.libs,
         // libs that MAY be included in a consuming app but are used here for examples purposes
-        examples: opts.examples,
-        // ts definitions to copy to the typings dir
-        typings: opts.typings
+        examples: opts.examples
     };
     this.fileNames = {
         cssOut: this.metadata.name + '.css',
