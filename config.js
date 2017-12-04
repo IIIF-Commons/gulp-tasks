@@ -3,9 +3,9 @@ module.exports = function (opts) {
     this.header = '// ' + this.metadata.name + ' v' + this.metadata.version + ' ' + this.metadata.homepage + '\n';
     this.dependencies = {
         // libs that MUST be included in a consuming app for this component to work
-        libs: opts.libs,
+        libs: opts.libs || [],
         // libs that MAY be included in a consuming app but are used here for examples purposes
-        examples: opts.examples
+        examples: opts.examples || []
     };
     this.fileNames = {
         cssOut: this.metadata.name + '.css',
