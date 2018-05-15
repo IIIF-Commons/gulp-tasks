@@ -29,9 +29,12 @@ module.exports = function (opts) {
             standalone: this.metadata.name,
             debug: false
         }
-    };
+    };    
     this.sources = {
         css: './src/css/styles.less',
         img: './src/img/**'
     };
+    this.less = {
+        strictMath: 'off'
+    }
 }
