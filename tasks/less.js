@@ -7,7 +7,9 @@ module.exports = function(config) {
 
     gulp.task('less', function() {
         return gulp.src(config.sources.css)
-            .pipe(less(config.less))
+            .pipe(less(Object.assign({
+                paths: [ path.join(__dirname, 'less', 'includes') ]
+            }, config.less)))
             .pipe(rename(config.fileNames.cssOut))
             .pipe(gulp.dest(config.directories.dist));
   });

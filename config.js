@@ -34,7 +34,5 @@ module.exports = function (opts) {
         css: './src/css/styles.less',
         img: './src/img/**'
     };
-    this.less = Object.assign({
-        paths: [ path.join(__dirname, 'less', 'includes') ]
-    }, opts.less || {})
+    this.less = opts.less || {}
 }
