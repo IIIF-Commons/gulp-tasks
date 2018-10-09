@@ -1,6 +1,5 @@
 const browserify = require('./tasks/browserify');
 const build = require('./tasks/build');
-const bump = require('./tasks/bump');
 const bundle = require('./tasks/bundle');
 const clean = require('./tasks/clean');
 const copy = require('./tasks/copy');
@@ -30,13 +29,11 @@ module.exports = {
         mocha(c);
         prependHeaders(c);
 
-        gulp.task('default', function(cb) {
-            runSequence('clean:dist', 'clean:examples', 'build', 'browserify', 'less', 'minify', 'bundle', 'prependHeaders', 'sync', cb);
-        });
+        gulp.task('default', gulp.series('clean:dist', 'clean:examples', 'build', 'browserify', 'less', 'minify', 'bundle', 'prependHeaders', 'sync'));
 
-        gulp.task('sync', ['copy:bundle', 'copy:css', 'copy:img']);
+        gulp.task('sync', gulp.parallel('copy:bundle', 'copy:css', 'copy:img'));
         
-        gulp.task('test', ['mocha']);
+        gulp.task('test', gulp.series('mocha'));
     }
 
 }

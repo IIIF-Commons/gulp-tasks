@@ -30,7 +30,6 @@
     "gulp-utils": "iiif-commons/gulp-utils",
     "merge2": "^1.0.2",
     "path": "^0.12.7",
-    "run-sequence": "2.2.1",
     "typescript": "2.5.3",
     "yargs": "^4.7.1"
   }
