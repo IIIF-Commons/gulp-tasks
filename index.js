@@ -10,7 +10,6 @@ const mocha = require('./tasks/mocha');
 const prependHeaders = require('./tasks/prependHeaders');
 const config = require('./config');
 const gulp = require('gulp');
-const runSequence = require('run-sequence');
 
 module.exports = {
 
